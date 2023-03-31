@@ -1,3 +1,68 @@
 html {
     font-family: 'Righteous', cursive;
 }
+* {
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+body {
+    background-color: #969696;
+    display:flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+button {
+    background-color: #969696;
+    font-size: 25px;
+    font-weight: 400;
+    border-radius: 7px;
+    color:white;
+    width:150px;
+    height: 60px;
+}
+
+.container {
+    width:900px;
+    height:600px;
+    background-image: url(images/background.png);
+    border-radius: 10px;
+    padding:40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.input {
+    width:100%;
+    display:flex;
+    justify-content: center;
+    height: 10%;
+    margin-bottom:50px;
+ 
+}
+.input>input {
+    width:500px;
+    background-color: #969696;
+    border-radius: 7px;
+    font-size: 30px;
+    font-weight: 400;
+    color:white;
+    padding: 0 20px;
+    text-align: right;
+}
+
+.numbers {
+    flex:6;
+    display:flex;
+    flex-wrap: wrap;
+    gap:20px;
+}
+.operators {
+    flex:2;
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+}
+
