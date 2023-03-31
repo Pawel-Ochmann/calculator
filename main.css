@@ -15,6 +15,7 @@ body {
     align-items: center;
 }
 button {
+    font-family: 'Righteous', cursive;
     background-color: #969696;
     font-size: 25px;
     font-weight: 400;
@@ -29,7 +30,7 @@ button {
 button:focus {
     filter:brightness(90%);
     font-size: 21px;
-    border:2px solid white;
+    border:2px solid rgba(0,0,0,0);
     box-shadow: inset 0px 0px 20px 5px rgba(66, 68, 90, 1);
 }
 
@@ -37,7 +38,7 @@ button:focus {
     width:900px;
     height:600px;
     background-image: url(images/background.png);
-    border-radius: 10px;
+    border-radius: 15px;
     padding:60px 40px;
     display: flex;
     flex-wrap: wrap;
@@ -48,7 +49,7 @@ button:focus {
     width:100%;
     display:flex;
     justify-content: center;
-    height: 13%;
+    align-items: center;
     margin-bottom:50px;
  
 }
@@ -56,10 +57,10 @@ button:focus {
     width:500px;
     background-color: #969696;
     border-radius: 7px;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 400;
     color:white;
-    padding: 0 20px;
+    padding: 5px 20px;
     text-align: right;
     border: 2px solid silver;
 }

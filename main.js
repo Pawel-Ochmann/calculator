@@ -4,6 +4,18 @@ let number1 = 2;
 let number2 = 4;
 let operator =2;
 
+let display = document.querySelector('.display');
+
+const numbers = document.querySelectorAll('.number');
+const asideButtons = document.querySelectorAll('.aside_button')
+
+//event-listeners
+numbers.forEach((number)=> {
+    number.addEventListener('click',displayContent)
+});
+asideButtons.forEach((button)=> {
+    button.addEventListener('click',displayContent)
+});
 
 
 //functions
@@ -26,4 +38,8 @@ function divide(a,b) {
     return a/b;
 }
 
-console.log(operate(operator,number1,number2));
+
+function displayContent() {
+    console.log(this)
+    display.textContent += this.textContent;
+}
