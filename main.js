@@ -2,7 +2,7 @@
 
 let number1 = 2;
 let number2 = 4;
-let operator =2;
+let actualOperator = '';
 
 let display = document.querySelector('.display');
 
@@ -14,7 +14,8 @@ numbers.forEach((number)=> {
     number.addEventListener('click',displayContent)
 });
 asideButtons.forEach((button)=> {
-    button.addEventListener('click',displayContent)
+    button.addEventListener('click',displayOperator);
+
 });
 
 
@@ -40,6 +41,12 @@ function divide(a,b) {
 
 
 function displayContent() {
-    console.log(this)
     display.textContent += this.textContent;
+};
+function displayOperator() {
+    if (actualOperator) return; 
+    number1 = display.textContent;
+    console.log(+number1);
+    display.textContent += this.textContent;
+    actualOperator = this.dataset.op;
 }
