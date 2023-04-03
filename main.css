@@ -27,7 +27,7 @@ button {
     transition: .3s;
 }
 
-button:focus {
+.focus {
     filter:brightness(90%);
     font-size: 21px;
     border:2px solid rgba(0,0,0,0);
@@ -54,7 +54,7 @@ button:focus {
  
 }
 .input>p {
-    width:500px;
+    width:700px;
     background-color: #969696;
     border-radius: 7px;
     font-size: 40px;
@@ -63,6 +63,8 @@ button:focus {
     padding: 5px 20px;
     text-align: right;
     border: 2px solid silver;
+    height: 63px;
+    overflow: hidden;
 }
 
 .numbers {
