@@ -13,6 +13,7 @@ const clear = document.querySelector('#clear');
 const backspace = document.querySelector('#backspace');
 
 const equal = document.querySelector('#equal');
+const dot = document.querySelector("#dot")
 
 //event-listeners
 numbers.forEach((number)=> {
@@ -38,7 +39,8 @@ buttons.forEach((button)=> {
     })
 })
 
-
+backspace.addEventListener('click', stepBack);
+dot.addEventListener('click',useDots);
 
 //functions
 function operate(op,nr1,nr2) {
@@ -88,3 +90,19 @@ function clearUp() {
     number2 = null;
     actualOperator = null;
 }
+
+function stepBack() {
+    let content = display.textContent;
+    if (!content || content[content.length-1]===" ") return
+    else content = content.slice(0,-1);
+    display.textContent = content;
+};
+
+function useDots() {
+    let actualNumber = display.textContent.split(' ');
+    actualNumber = actualNumber[actualNumber.length-1];
+    console.log(actualNumber)
+    if (actualNumber.includes('.')) return
+    else display.textContent += this.textContent;
+}
+
