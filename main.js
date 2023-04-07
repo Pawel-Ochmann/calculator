@@ -94,6 +94,7 @@ function displayOperator() {
 function setUpOperate() {
     const displaySecond = display.textContent.split(' ');
     if (!displaySecond[2] && displaySecond[2]!== 0) return 
+    if(isNaN(displaySecond[2])) return;
     number2 = +displaySecond[2];
     operate(actualOperator,number1,number2)
 }
