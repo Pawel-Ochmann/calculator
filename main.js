@@ -135,3 +135,31 @@ function setUpNumber1() {
         number1 = +display.textContent;
     }
   }
+
+  // keyboard support 
+
+  window.addEventListener('keydown', (e)=> {
+    console.log(e.key)
+    let element = document.querySelector(`[data-key="${e.key}"]`);
+
+    if(!element) return;
+
+    else if(element.classList.contains('number')) {
+    element.dispatchEvent(new Event('click', displayContent))
+    }
+    else if(element.classList.contains('aside_button')) {
+        element.dispatchEvent(new Event('click', displayOperator))
+    }
+    else if(e.key='.') {
+        element.dispatchEvent(new Event('click', useDots))
+    }
+    else if (e.key='Backspace') {
+        element.dispatchEvent(new Event('click', stepBack))
+    }
+    else if (e.key='=') {
+        element.dispatchEvent(new Event('click', setUpOperate))
+    }
+    else if (e.key='Delete') {
+        element.dispatchEvent(new Event('click', clearUp))
+    }
+  })
