@@ -47,7 +47,11 @@ function operate(op,nr1,nr2) {
     const operators = [add,subtract,multiply,divide];
     let operationProduct =  operators[op](nr1,nr2);
     clearUp()
+    if(operationProduct.toString().length>10) {
+        operationProduct = operationProduct.toFixed(10);
+    }
     display.textContent = operationProduct;
+
 }
 
 
@@ -124,15 +128,12 @@ function useDots() {
 function setUpNumber1() {
     // if (isNaN(+display.textContent)) {
     if (display.textContent.split(' ').length<2) {
-        console.log('kurwa1')
         number1 = +display.textContent;
     }
     else if(isNaN(+display.textContent)) {
-        console.log('kurwa2')
         number1 = +display.textContent.split(' ')[0]
      }
     else  {
-        console.log('kurwa3')
         number1 = +display.textContent;
     }
   }
@@ -140,7 +141,6 @@ function setUpNumber1() {
   // keyboard support 
 
   window.addEventListener('keydown', (e)=> {
-    console.log(e.key)
     let element = document.querySelector(`[data-key="${e.key}"]`);
 
     if(!element) return;
