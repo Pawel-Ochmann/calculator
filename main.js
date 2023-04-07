@@ -45,7 +45,7 @@ dot.addEventListener('click',useDots);
 //functions
 function operate(op,nr1,nr2) {
     const operators = [add,subtract,multiply,divide];
-    let operationProduct =  operators[op](nr1,nr2).toFixed(10);
+    let operationProduct =  operators[op](nr1,nr2);
     clearUp()
     display.textContent = operationProduct;
 }
@@ -61,7 +61,7 @@ function multiply(a,b) {
     return a*b;
 }
 function divide(a,b) {
-    if (b===0) { return 'Do NOT divide by "0"!'}
+    if (b===0) return 'Do NOT divide by 0!'
     else return a/b;
 }
 
@@ -71,6 +71,20 @@ function displayContent() {
 };
 function displayOperator() {
     setUpOperate()
+
+    if(this.textContent ==='-') {
+        let second = display.textContent.split(' ')
+        console.log(second[2],actualOperator)
+        if(number1 ===null) {
+            console.log('kurwa1')
+            display.textContent += this.textContent;
+        }
+        if (second[2] === undefined && actualOperator!==null) {
+            console.log('kurwa2')
+            display.textContent += this.textContent;
+        }
+    }
+
     number1 = +display.textContent;
     if (!number1) return
     display.textContent += ` ${this.textContent} `;
@@ -79,8 +93,8 @@ function displayOperator() {
 
 function setUpOperate() {
     const displaySecond = display.textContent.split(' ');
+    if (!displaySecond[2] && displaySecond[2]!== 0) return 
     number2 = +displaySecond[2];
-    if (!number2 && number2!==0) return
     operate(actualOperator,number1,number2)
 }
 
