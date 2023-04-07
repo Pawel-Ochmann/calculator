@@ -74,7 +74,6 @@ function displayOperator() {
 
     if(this.textContent ==='-') {
         let second = display.textContent.split(' ')
-        console.log(second)
         if(!display.textContent) {
             display.textContent += this.textContent;
         }
@@ -82,11 +81,14 @@ function displayOperator() {
             display.textContent += this.textContent;
         }
     }
-
-    number1 = +display.textContent;
+      
+    setUpNumber1()
+   
     if (!number1) return
+    
+    if(display.textContent.split(' ').length<2) {
     display.textContent += ` ${this.textContent} `;
-    actualOperator = +this.dataset.op;
+    actualOperator = +this.dataset.op;}
 }
 
 function setUpOperate() {
@@ -118,3 +120,18 @@ function useDots() {
     else display.textContent += this.textContent;
 }
 
+function setUpNumber1() {
+    // if (isNaN(+display.textContent)) {
+    if (display.textContent.split(' ').length<2) {
+        console.log('kurwa1')
+        number1 = +display.textContent;
+    }
+    else if(isNaN(+display.textContent)) {
+        console.log('kurwa2')
+        number1 = +display.textContent.split(' ')[0]
+     }
+    else  {
+        console.log('kurwa3')
+        number1 = +display.textContent;
+    }
+  }
