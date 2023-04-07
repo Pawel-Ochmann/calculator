@@ -74,13 +74,11 @@ function displayOperator() {
 
     if(this.textContent ==='-') {
         let second = display.textContent.split(' ')
-        console.log(second[2],actualOperator)
-        if(number1 ===null) {
-            console.log('kurwa1')
+        console.log(second)
+        if(!display.textContent) {
             display.textContent += this.textContent;
         }
-        if (second[2] === undefined && actualOperator!==null) {
-            console.log('kurwa2')
+        if (second[2] === "" && actualOperator!==null) {
             display.textContent += this.textContent;
         }
     }
