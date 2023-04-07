@@ -47,7 +47,11 @@ function operate(op,nr1,nr2) {
     const operators = [add,subtract,multiply,divide];
     let operationProduct =  operators[op](nr1,nr2);
     clearUp()
-    if(operationProduct.toString().length>10) {
+    console.log(operationProduct)
+    if (isNaN(operationProduct)) {
+        display.textContent = operationProduct
+    }
+    else if (operationProduct.toString().length>10) {
         operationProduct = operationProduct.toFixed(10);
     }
     display.textContent = operationProduct;
